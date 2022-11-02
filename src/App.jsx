@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "@emotion/styled";
 import Form from "./components/Form";
 import ImagenCripto from "./img/imagen-criptos.png";
+import { useEffect } from "react";
 
 const Contenedor = styled.div`
   max-width: 900px;
@@ -41,12 +42,18 @@ const Heading = styled.h1`
 `;
 
 function App() {
+  const [monedas, setMonedas] = useState({})
+
+  useEffect(() => {
+    
+  },[monedas])
+
   return (
     <Contenedor>
       <Imagen src={ImagenCripto} alt="imagenes cripto"></Imagen>
       <div>
         <Heading>Cotiza Criptomonedas en el acto!</Heading>
-        <Form />
+        <Form setMonedas={setMonedas} />
       </div>
     </Contenedor>
   );
